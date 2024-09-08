@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+template <typename T>
+polynomial<T> multiply_polynomials(std::vector<polynomial<T>> p, size_t k = -1) {
+	int n = (int) p.size();
+	for (int i = 1; i < n; i <<= 1) {
+		for (int j = 0; j < n; j += 2 * i) {
+			p[j] *= p[i + j], p[j] %= k;
+		}
+	}
+	return p[0];
+}
+]]></content>
+	<tabTrigger>multiplypolynomials</tabTrigger>
+	<source>source.cpp</source>
+</snippet>

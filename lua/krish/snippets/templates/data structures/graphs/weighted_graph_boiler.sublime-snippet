@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+template<typename T>
+struct graph : vector<vector<pair<int, T>>> {
+	int n;
+	graph(int n) : vector<vector<pair<int, T>>>(n), n(n) {}
+
+	void add(int x, int y, T z) {(*this)[x].push_back({y, z}); (*this)[y].push_back({x, z});}
+	friend void sort(graph &g) {for (auto &i : g)sort(i.begin(), i.end());}
+};
+]]></content>
+	<tabTrigger>weightedgraph</tabTrigger>
+	<source>source.cpp</source>
+</snippet>

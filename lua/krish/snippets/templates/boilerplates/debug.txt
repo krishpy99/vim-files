@@ -1,0 +1,4 @@
+template<typename... T>
+void deb(T... args) {
+	((cout << args << ' '), ...); cout << '\n';
+}

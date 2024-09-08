@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+template<class G>
+void dfs(G& g, int root) {
+	vector<int> vis(g.n); sort(g);
+	auto doit = [&](int r, int p, const auto & self) -> void {
+		vis[r] = 1;
+		for (auto i : g[r]) {
+			if (!vis[i]) self(i, r, self);
+		}
+	};
+	doit(root, root, doit);
+}
+]]></content>
+	<tabTrigger>dfsgraph</tabTrigger>
+	<source>source.cpp</source>
+</snippet>

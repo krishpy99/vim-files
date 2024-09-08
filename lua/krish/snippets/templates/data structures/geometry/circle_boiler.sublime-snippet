@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+struct Circle {
+	pt c; double r;
+	Circle() {}
+	Circle
+};
+]]></content>
+	<tabTrigger>circleboiler</tabTrigger> 
+	<source>source.cpp</source>
+</snippet>
