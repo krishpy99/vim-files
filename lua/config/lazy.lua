@@ -11,11 +11,16 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-function init()
-	require("lazy").setup(
-		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 }
-	)
-end
 
+local plugins = {
+	'catppuccin/nvim',
 
-init()
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.8',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	}
+}
+
+local opts = {}
+
+require("lazy").setup(plugins)
